@@ -1,0 +1,54 @@
+from math import prod
+
+class Neuron:
+  
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+        
+#SUM       
+    def Sumator(self, a, b, c):        
+        for i in zip(a, b):
+            y = prod(i)
+            c.append(y)
+        fgh = sum(c) 
+        return fgh 
+
+#activation
+    def onestep(self, x):
+        if x >= 1:
+            return 1
+        else:
+            return 0
+
+
+
+input_data = [1, 1, 0, 1, 1] #входные данные 
+vesa = [2, 4, 1, 3, 2] #Веса
+list1 = []
+
+bias = 10 #смещение 
+
+
+n = Neuron(input_data, vesa, list1)
+
+s = n.Sumator(input_data, vesa, list1) - bias
+
+print("S =", s)
+print("Y =", n.onestep(s))
+
+
+
+
+
+
+
+    
+    
+
+
+  
+
+
+
